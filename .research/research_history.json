@@ -3,5 +3,19 @@
   "queries": [
     "graph attention network acceleration",
     "fast GAT training"
+  ],
+  "research_study_list": [
+    {
+      "title": "Bandit Samplers for Training Graph Neural Networks"
+    },
+    {
+      "title": "Faster Neighborhood Attention: Reducing the O(n^2) Cost of Self Attention at the Threadblock Level"
+    },
+    {
+      "title": "Are GATs Out of Balance?"
+    },
+    {
+      "title": "Bandit Samplers for Training Graph Neural Networks"
+    }
   ]
 }
