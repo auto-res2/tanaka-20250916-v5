@@ -124,7 +124,472 @@
         "OGBN-Arxiv",
         "Bio-PPI",
         "Amazon-CoPurchase"
-      ]
+      ],
+      "external_resources": {
+        "hugging_face": {
+          "models": [
+            {
+              "id": "VatsalPatel18/GATv2Encoder",
+              "author": "VatsalPatel18",
+              "sha": "1a3aa11fa2c5e773962bd89b530d6c235d319989",
+              "created_at": "2024-05-28T02:03:38+00:00",
+              "last_modified": "2024-05-28T02:36:47+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 4,
+              "likes": 0,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "config.json"
+                },
+                {
+                  "rfilename": "pytorch_model.bin"
+                }
+              ],
+              "card_data": {
+                "license": "bsd-3-clause",
+                "language": [],
+                "tags": [],
+                "datasets": [],
+                "task_categories": [],
+                "size_categories": [],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "transformers",
+                "pytorch",
+                "omics-graph-network",
+                "license:bsd-3-clause",
+                "endpoints_compatible",
+                "region:us"
+              ],
+              "library_name": "transformers",
+              "readme": "---\r\nlicense: bsd-3-clause\r\n---\r\n",
+              "extracted_code": ""
+            },
+            {
+              "id": "VatsalPatel18/GATv2Decoder",
+              "author": "VatsalPatel18",
+              "sha": "73e3aba068e36d28fada33c3127177e01416d20a",
+              "created_at": "2024-05-28T02:03:54+00:00",
+              "last_modified": "2024-05-28T02:36:52+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 3,
+              "likes": 0,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "config.json"
+                },
+                {
+                  "rfilename": "pytorch_model.bin"
+                }
+              ],
+              "card_data": {
+                "license": "bsd-3-clause",
+                "language": [],
+                "tags": [],
+                "datasets": [],
+                "task_categories": [],
+                "size_categories": [],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "transformers",
+                "pytorch",
+                "omics-graph-network",
+                "license:bsd-3-clause",
+                "endpoints_compatible",
+                "region:us"
+              ],
+              "library_name": "transformers",
+              "readme": "---\r\nlicense: bsd-3-clause\r\n---\r\n",
+              "extracted_code": ""
+            }
+          ],
+          "datasets": [
+            {
+              "id": "MedRAG/pubmed",
+              "author": "MedRAG",
+              "sha": "33da3593d5756bc04c8909f170003c0b14197957",
+              "created_at": "2024-02-20T17:59:26+00:00",
+              "last_modified": "2024-02-27T05:35:03+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 1768,
+              "likes": 87,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0001.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0002.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0003.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0004.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0005.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0006.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0007.jsonl"
+                },
+                {
+                  "rfilename": "chunk/pubmed23n0008.jsonl"
+                }
+              ],
+              "card_data": {
+                "language": [
+                  "en"
+                ],
+                "tags": [
+                  "medical",
+                  "question answering",
+                  "large language model",
+                  "retrieval-augmented generation"
+                ],
+                "datasets": [],
+                "task_categories": [
+                  "question-answering"
+                ],
+                "size_categories": [
+                  "10M<n<100M"
+                ],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "task_categories:question-answering",
+                "language:en",
+                "size_categories:1M<n<10M",
+                "format:json",
+                "modality:text",
+                "library:datasets",
+                "library:dask",
+                "library:mlcroissant",
+                "library:polars",
+                "arxiv:2402.13178",
+                "region:us",
+                "medical",
+                "question answering",
+                "large language model",
+                "retrieval-augmented generation"
+              ],
+              "readme": "---\ntask_categories:\n- question-answering\nlanguage:\n- en\ntags:\n- medical\n- question answering\n- large language model\n- retrieval-augmented generation\nsize_categories:\n- 10M<n<100M\n---\n# The PubMed Corpus in MedRAG\n\nThis HF dataset contains the snippets from the PubMed corpus used in [MedRAG](https://arxiv.org/abs/2402.13178). It can be used for medical Retrieval-Augmented Generation (RAG).\n\n## News\n- (02/26/2024) The \"id\" column has been reformatted. A new \"PMID\" column is added.\n\n## Dataset Details\n\n### Dataset Descriptions\n\n[PubMed](https://pubmed.ncbi.nlm.nih.gov/) is the most widely used literature resource, containing over 36 million biomedical articles. \nFor MedRAG, we use a PubMed subset of 23.9 million articles with valid titles and abstracts.\nThis HF dataset contains our ready-to-use snippets for the PubMed corpus, including 23,898,701 snippets with an average of 296 tokens.\n\n### Dataset Structure\nEach row is a snippet of PubMed, which includes the following features:\n\n- id: a unique identifier of the snippet\n- title: the title of the PubMed article from which the snippet is collected\n- content: the abstract of the PubMed article from which the snippet is collected\n- contents: a concatenation of 'title' and 'content', which will be used by the [BM25](https://github.com/castorini/pyserini) retriever\n\n## Uses\n\n<!-- Address questions around how the dataset is intended to be used. -->\n\n### Direct Use\n\n<!-- This section describes suitable use cases for the dataset. -->\n\n```shell\ngit clone https://huggingface.co/datasets/MedRAG/pubmed\n```\n\n### Use in MedRAG\n\n```python\n>> from src.medrag import MedRAG\n\n>> question = \"A lesion causing compression of the facial nerve at the stylomastoid foramen will cause ipsilateral\"\n>> options = {\n    \"A\": \"paralysis of the facial muscles.\",\n    \"B\": \"paralysis of the facial muscles and loss of taste.\",\n    \"C\": \"paralysis of the facial muscles, loss of taste and lacrimation.\",\n    \"D\": \"paralysis of the facial muscles, loss of taste, lacrimation and decreased salivation.\"\n}\n\n>> medrag = MedRAG(llm_name=\"OpenAI/gpt-3.5-turbo-16k\", rag=True, retriever_name=\"MedCPT\", corpus_name=\"PubMed\")\n>> answer, snippets, scores = medrag.answer(question=question, options=options, k=32) # scores are given by the retrieval system\n```\n\n## Citation\n```shell\n@article{xiong2024benchmarking,\n    title={Benchmarking Retrieval-Augmented Generation for Medicine}, \n    author={Guangzhi Xiong and Qiao Jin and Zhiyong Lu and Aidong Zhang},\n    journal={arXiv preprint arXiv:2402.13178},\n    year={2024}\n}\n```",
+              "extracted_code": "from src.medrag import MedRAG\n\nquestion = \"A lesion causing compression of the facial nerve at the stylomastoid foramen will cause ipsilateral\"\noptions = {\n    \"A\": \"paralysis of the facial muscles.\",\n    \"B\": \"paralysis of the facial muscles and loss of taste.\",\n    \"C\": \"paralysis of the facial muscles, loss of taste and lacrimation.\",\n    \"D\": \"paralysis of the facial muscles, loss of taste, lacrimation and decreased salivation.\"\n}\n\nmedrag = MedRAG(llm_name=\"OpenAI/gpt-3.5-turbo-16k\", rag=True, retriever_name=\"MedCPT\", corpus_name=\"PubMed\")\nanswer, snippets, scores = medrag.answer(question=question, options=options, k=32) # scores are given by the retrieval system"
+            },
+            {
+              "id": "somewheresystems/dataclysm-pubmed",
+              "author": "somewheresystems",
+              "sha": "d6e696631dddfbc9425b064582f7d7d7148744cd",
+              "created_at": "2024-01-18T20:54:56+00:00",
+              "last_modified": "2024-02-01T01:46:14+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 1038,
+              "likes": 6,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "embed_batch_0.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_1.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_10.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_100.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_101.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_102.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_103.parquet"
+                },
+                {
+                  "rfilename": "embed_batch_104.parquet"
+                }
+              ],
+              "card_data": {
+                "license": "apache-2.0",
+                "language": [
+                  "en"
+                ],
+                "tags": [
+                  "pubmed",
+                  "medical",
+                  "medicine",
+                  "NIH",
+                  "science"
+                ],
+                "datasets": [],
+                "task_categories": [],
+                "size_categories": [
+                  "10M<n<100M"
+                ],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "language:en",
+                "license:apache-2.0",
+                "size_categories:10M<n<100M",
+                "region:us",
+                "pubmed",
+                "medical",
+                "medicine",
+                "NIH",
+                "science"
+              ],
+              "readme": "---\nlicense: apache-2.0\nlanguage:\n- en\n\n\n\ntags:\n- pubmed\n- medical\n- medicine\n- NIH\n- science\npretty_name: dataclysm-arxiv\nsize_categories:\n- 10M<n<100M\n---\n\n# DATACLYSM PATCH 0.0.4: PUBMED\n## USE THE NOTEBOOK TO GET STARTED!\nhttps://github.com/somewheresystems/dataclysm\n\n# somewheresystems/dataclysm-pubmed\n\nThis dataset comprises of 35.7 million PubMed metadata entries including title and some (~69% with) abstracts, with two new columns added: title-embeddings and abstract-embeddings. These additional columns were generated using the bge-small-en-v1.5 embeddings model. The dataset was sourced from the PubMed Baseline as of December 12, 2023. https://ftp.ncbi.nlm.nih.gov/pubmed/baseline/ \n\n# Embeddings Model\n\nWe used https://huggingface.co/BAAI/bge-small-en-v1.5 to embed the `title` and `abstract` fields. \n\n## Contact\n\nPlease contact hi@dataclysm.xyz for inquiries.",
+              "extracted_code": ""
+            },
+            {
+              "id": "HuggingFaceGECLM/REDDIT_comments",
+              "author": "HuggingFaceGECLM",
+              "sha": "54779d3d1f1c1b12e5989f695e13d38b394a558f",
+              "created_at": "2023-03-15T14:14:58+00:00",
+              "last_modified": "2023-03-17T07:52:51+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 3376,
+              "likes": 13,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "data/AskHistorians-00000-of-00005-7bc8c6a7ee105086.parquet"
+                },
+                {
+                  "rfilename": "data/AskHistorians-00001-of-00005-a4b2a36ae8eb6dde.parquet"
+                },
+                {
+                  "rfilename": "data/AskHistorians-00002-of-00005-f37b6800dc969287.parquet"
+                },
+                {
+                  "rfilename": "data/AskHistorians-00003-of-00005-330d2299e0da6dec.parquet"
+                },
+                {
+                  "rfilename": "data/AskHistorians-00004-of-00005-76c3eb5c7cde9f6f.parquet"
+                },
+                {
+                  "rfilename": "data/DIY-00000-of-00005-512b4731dec4f768.parquet"
+                },
+                {
+                  "rfilename": "data/DIY-00001-of-00005-dc205c62f6df1562.parquet"
+                },
+                {
+                  "rfilename": "data/DIY-00002-of-00005-843a8ff04871b6a7.parquet"
+                }
+              ],
+              "card_data": {
+                "license": [],
+                "language": [
+                  "en"
+                ],
+                "tags": [
+                  "reddit",
+                  "social-media"
+                ],
+                "datasets": [],
+                "task_categories": [
+                  "text-generation"
+                ],
+                "size_categories": [
+                  "10B<n<100B"
+                ],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "task_categories:text-generation",
+                "task_ids:dialogue-modeling",
+                "task_ids:language-modeling",
+                "annotations_creators:no-annotation",
+                "language_creators:found",
+                "multilinguality:monolingual",
+                "language:en",
+                "size_categories:100M<n<1B",
+                "format:parquet",
+                "modality:text",
+                "library:datasets",
+                "library:dask",
+                "library:mlcroissant",
+                "library:polars",
+                "arxiv:2001.08435",
+                "region:us",
+                "reddit",
+                "social-media"
+              ],
+              "readme": "---\ndataset_info:\n  features:\n  - name: archived\n    dtype: string\n  - name: author\n    dtype: string\n  - name: author_fullname\n    dtype: string\n  - name: body\n    dtype: string\n  - name: comment_type\n    dtype: string\n  - name: controversiality\n    dtype: string\n  - name: created_utc\n    dtype: string\n  - name: edited\n    dtype: string\n  - name: gilded\n    dtype: string\n  - name: id\n    dtype: string\n  - name: link_id\n    dtype: string\n  - name: locked\n    dtype: string\n  - name: name\n    dtype: string\n  - name: parent_id\n    dtype: string\n  - name: permalink\n    dtype: string\n  - name: retrieved_on\n    dtype: string\n  - name: score\n    dtype: string\n  - name: subreddit_id\n    dtype: string\n  - name: subreddit_name_prefixed\n    dtype: string\n  - name: subreddit_type\n    dtype: string\n  - name: total_awards_received\n    dtype: string\n  splits:\n  - name: programming\n    num_bytes: 3466623746\n    num_examples: 7503347\n  - name: tifu\n    num_bytes: 4761338653\n    num_examples: 12738669\n  - name: explainlikeimfive\n    num_bytes: 8451732573\n    num_examples: 16392814\n  - name: WritingPrompts\n    num_bytes: 4651591771\n    num_examples: 4436210\n  - name: changemyview\n    num_bytes: 8603031915\n    num_examples: 11600073\n  - name: LifeProTips\n    num_bytes: 5272994396\n    num_examples: 12829459\n  - name: todayilearned\n    num_bytes: 22655655241\n    num_examples: 60199778\n  - name: science\n    num_bytes: 7069809765\n    num_examples: 18112884\n  - name: askscience\n    num_bytes: 3144754665\n    num_examples: 6286702\n  - name: ifyoulikeblank\n    num_bytes: 547200329\n    num_examples: 1332211\n  - name: Foodforthought\n    num_bytes: 308377128\n    num_examples: 567900\n  - name: IWantToLearn\n    num_bytes: 408331672\n    num_examples: 745543\n  - name: bestof\n    num_bytes: 2003718831\n    num_examples: 4347522\n  - name: IAmA\n    num_bytes: 9380094090\n    num_examples: 25778822\n  - name: socialskills\n    num_bytes: 1000014402\n    num_examples: 1842733\n  - name: relationship_advice\n    num_bytes: 22298879735\n    num_examples: 38937398\n  - name: philosophy\n    num_bytes: 1494947876\n    num_examples: 2391695\n  - name: YouShouldKnow\n    num_bytes: 1165617658\n    num_examples: 2639265\n  - name: history\n    num_bytes: 1457852402\n    num_examples: 2962043\n  - name: books\n    num_bytes: 4562689426\n    num_examples: 10187495\n  - name: Showerthoughts\n    num_bytes: 13259109532\n    num_examples: 34123213\n  - name: personalfinance\n    num_bytes: 9484869588\n    num_examples: 18361314\n  - name: buildapc\n    num_bytes: 9801044390\n    num_examples: 21761801\n  - name: EatCheapAndHealthy\n    num_bytes: 853462012\n    num_examples: 1821897\n  - name: boardgames\n    num_bytes: 3131627378\n    num_examples: 6328926\n  - name: malefashionadvice\n    num_bytes: 2928017882\n    num_examples: 7712258\n  - name: femalefashionadvice\n    num_bytes: 1619784736\n    num_examples: 3262969\n  - name: scifi\n    num_bytes: 888152056\n    num_examples: 2193741\n  - name: Fantasy\n    num_bytes: 2285934538\n    num_examples: 4566639\n  - name: Games\n    num_bytes: 10396813188\n    num_examples: 23373965\n  - name: bodyweightfitness\n    num_bytes: 794549854\n    num_examples: 1613634\n  - name: SkincareAddiction\n    num_bytes: 3421122597\n    num_examples: 5660550\n  - name: podcasts\n    num_bytes: 464773126\n    num_examples: 943266\n  - name: suggestmeabook\n    num_bytes: 1842944304\n    num_examples: 3492937\n  - name: AskHistorians\n    num_bytes: 2244587909\n    num_examples: 2714353\n  - name: gaming\n    num_bytes: 28374513722\n    num_examples: 85729253\n  - name: DIY\n    num_bytes: 2113533684\n    num_examples: 4489265\n  - name: sports\n    num_bytes: 2230129132\n    num_examples: 6470079\n  - name: space\n    num_bytes: 3081499208\n    num_examples: 7896182\n  - name: gadgets\n    num_bytes: 1683252868\n    num_examples: 4104833\n  - name: Documentaries\n    num_bytes: 1852644771\n    num_examples: 4051474\n  - name: GetMotivated\n    num_bytes: 1211761267\n    num_examples: 3221980\n  - name: UpliftingNews\n    num_bytes: 2003149025\n    num_examples: 4741948\n  - name: technology\n    num_bytes: 10826871436\n    num_examples: 25404699\n  - name: Fitness\n    num_bytes: 6191132755\n    num_examples: 14319856\n  - name: travel\n    num_bytes: 1740556350\n    num_examples: 3806755\n  - name: lifehacks\n    num_bytes: 626791812\n    num_examples: 1799437\n  - name: Damnthatsinteresting\n    num_bytes: 6376694618\n    num_examples: 15643554\n  - name: gardening\n    num_bytes: 1825313940\n    num_examples: 4568468\n  - name: mildlyinteresting\n    num_bytes: 9079894206\n    num_examples: 26436769\n  download_size: 109177016105\n  dataset_size: 255339788158\nannotations_creators:\n- no-annotation\nlanguage:\n- en\nlanguage_creators:\n- found\nlicense: []\nmultilinguality:\n- monolingual\npretty_name: Reddit comments\nsize_categories:\n- 10B<n<100B\nsource_datasets: []\ntags:\n- reddit\n- social-media\ntask_categories:\n- text-generation\ntask_ids:\n- dialogue-modeling\n- language-modeling\n---\n\n# Dataset Card for \"REDDIT_comments\"\n## Dataset Description\n\n- **Homepage:**\n- **Paper: https://arxiv.org/abs/2001.08435**\n\n### Dataset Summary\nComments of 50 high-quality subreddits, extracted from the REDDIT PushShift data dumps (from 2006 to Jan 2023).\n\n### Supported Tasks\nThese comments can be used for text generation and language modeling, as well as dialogue modeling.\n\n## Dataset Structure\n### Data Splits\nEach split corresponds to a specific subreddit in the following list: \"tifu\", \"explainlikeimfive\", \"WritingPrompts\", \"changemyview\", \"LifeProTips\", \"todayilearned\", \"science\", \"askscience\", \"ifyoulikeblank\", \"Foodforthought\", \"IWantToLearn\", \"bestof\", \"IAmA\", \"socialskills\", \"relationship_advice\", \"philosophy\", \"YouShouldKnow\", \"history\", \"books\", \"Showerthoughts\", \"personalfinance\", \"buildapc\", \"EatCheapAndHealthy\", \"boardgames\", \"malefashionadvice\", \"femalefashionadvice\", \"scifi\", \"Fantasy\", \"Games\", \"bodyweightfitness\", \"SkincareAddiction\", \"podcasts\", \"suggestmeabook\", \"AskHistorians\", \"gaming\", \"DIY\", \"mildlyinteresting\", \"sports\", \"space\", \"gadgets\", \"Documentaries\", \"GetMotivated\", \"UpliftingNews\", \"technology\", \"Fitness\", \"travel\", \"lifehacks\", \"Damnthatsinteresting\", \"gardening\", \"programming\"\n\n## Dataset Creation\n\n### Curation Rationale\nAll the information fields have been cast to string, as their format change through time from one dump to the following. A reduced number of keys have been kept: \"archived\", \"author\", \"author_fullname\", \"body\", \"comment_type\", \"controversiality\", \"created_utc\", \"edited\", \"gilded\", \"id\", \"link_id\", \"locked\", \"name\", \"parent_id\", \"permalink\", \"retrieved_on\", \"score\", \"subreddit\", \"subreddit_id\", \"subreddit_name_prefixed\", \"subreddit_type\", \"total_awards_received\".\n\n### Source Data\nThe [Reddit PushShift data dumps](https://files.pushshift.io/reddit/) are part of a data collection effort which crawls Reddit at regular intervals, to extract and keep all its data.\n\n#### Initial Data Collection and Normalization\nSee the paper.\n\n#### Who are the source language producers?\nRedditors are mostly young (65% below 30), male (70%), and American (50% of the site).\n\n### Personal and Sensitive Information\nThe data contains Redditor's usernames associated to their content.\n\n## Considerations for Using the Data\n\nThis dataset should be anonymized before any processing.\nThough the subreddits selected are considered as being of higher quality, they can still reflect what you can find on the internet in terms of expressions of biases and toxicity.\n\n### Contributions\n\nThanks to [@clefourrier](https://github.com/clefourrier) for adding this dataset.",
+              "extracted_code": "from datasets import load_dataset\n\ndataset = load_dataset(\"reddit_comments\", \"rddt_cmnts\")"
+            },
+            {
+              "id": "fddemarco/pushshift-reddit-comments",
+              "author": "fddemarco",
+              "sha": "987111c7c262a3c1255f5da4ecc545782280e794",
+              "created_at": "2023-04-04T13:22:08+00:00",
+              "last_modified": "2023-05-14T17:19:16+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 2717,
+              "likes": 20,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": ".gitignore"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "data/RC_2012-01.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-02.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-03.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-04.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-05.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-06.parquet"
+                },
+                {
+                  "rfilename": "data/RC_2012-07.parquet"
+                }
+              ],
+              "card_data": {
+                "language": [],
+                "tags": [],
+                "datasets": [],
+                "task_categories": [],
+                "size_categories": [],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "size_categories:1B<n<10B",
+                "format:parquet",
+                "modality:tabular",
+                "modality:text",
+                "library:datasets",
+                "library:dask",
+                "library:mlcroissant",
+                "library:polars",
+                "region:us"
+              ],
+              "readme": "---\ndataset_info:\n  features:\n  - name: author\n    dtype: string\n  - name: body\n    dtype: string\n  - name: controversiality\n    dtype: int64\n  - name: created_utc\n    dtype: int64\n  - name: link_id\n    dtype: string\n  - name: score\n    dtype: int64\n  - name: subreddit\n    dtype: string\n  - name: subreddit_id\n    dtype: string\n  - name: id\n    dtype: string\n  splits:\n  - name: train\n    num_bytes: 1920019700\n    num_examples: 15034827\n  download_size: 1920019700\n  dataset_size: 1920019700\n---\n# Dataset Card for \"pushshift-reddit\"\n\n[More Information needed](https://github.com/huggingface/datasets/blob/main/CONTRIBUTING.md#how-to-contribute-to-the-dataset-cards)\n",
+              "extracted_code": ""
+            },
+            {
+              "id": "SauravMaheshkar/pareto-ogbn-arxiv",
+              "author": "SauravMaheshkar",
+              "sha": "0f3cb5bcb1c080f022f10940a9b134a11e6e0f2f",
+              "created_at": "2024-02-14T17:54:01+00:00",
+              "last_modified": "2024-02-14T17:57:14+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 38,
+              "likes": 0,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "link_gen.py"
+                },
+                {
+                  "rfilename": "links/arxiv_tvtEdges.pkl"
+                },
+                {
+                  "rfilename": "pretrain_labels/metis_label_arxiv.pt"
+                }
+              ],
+              "card_data": {
+                "license": "cc",
+                "language": [],
+                "tags": [],
+                "datasets": [],
+                "task_categories": [
+                  "graph-ml"
+                ],
+                "size_categories": [
+                  "1K<n<10K"
+                ],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "task_categories:graph-ml",
+                "license:cc",
+                "size_categories:1K<n<10K",
+                "arxiv:2210.02016",
+                "region:us"
+              ],
+              "readme": "---\nsize_categories:\n- 1K<n<10K\ntask_categories:\n- graph-ml\nlicense: cc\n---\n\n## Dataset Information\n\n| # Nodes | # Edges | # Features |\n|:-------:|:---------:|:----------:|\n| 169,343 | 1,166,243 |     128    |\n\nPre-processed as per the official codebase of https://arxiv.org/abs/2210.02016\n\n## Citations\n\n```\n@article{ju2023multi,\n  title={Multi-task Self-supervised Graph Neural Networks Enable Stronger Task Generalization},\n  author={Ju, Mingxuan and Zhao, Tong and Wen, Qianlong and Yu, Wenhao and Shah, Neil and Ye, Yanfang and Zhang, Chuxu},\n  booktitle={International Conference on Learning Representations},\n  year={2023}\n}\n```",
+              "extracted_code": ""
+            }
+          ]
+        }
+      }
     }
   },
   "idea_info_history": [
