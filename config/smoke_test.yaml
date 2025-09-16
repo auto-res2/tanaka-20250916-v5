@@ -10,6 +10,7 @@ eps_b: 0.005
 K_freeze: 3
 r_basis: 16
 early_stopping_patience: 5
-output_dir: ".research/iteration3"
+output_dir: ".research/iteration4"
 energy_monitoring: false
 seeds: [42]
+edge_batch_size: 10000000

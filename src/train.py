@@ -103,7 +103,7 @@ class BEFGAT(MessagePassing):
     """BEF-GAT: Bounded-Error Freezing for Graph Attention Networks."""
     
     def __init__(self, in_channels, hidden_channels, out_channels, num_heads=8,
-                 dropout=0.6, eps_b=5e-3, K_freeze=6, r_basis=32):
+                 dropout=0.6, eps_b=5e-3, K_freeze=6, r_basis=32, edge_batch_size=4000000):
         super().__init__(aggr='add', node_dim=0)
         
         self.in_channels = in_channels
@@ -111,6 +111,7 @@ class BEFGAT(MessagePassing):
         self.out_channels = out_channels
         self.num_heads = num_heads
         self.dropout = dropout
+        self.edge_batch_size = edge_batch_size
         
         self.lin_l = nn.Linear(in_channels, num_heads * hidden_channels, bias=False)
         self.lin_r = nn.Linear(in_channels, num_heads * hidden_channels, bias=False)
@@ -142,12 +143,38 @@ class BEFGAT(MessagePassing):
             delta_h = torch.zeros_like(x)
         self.prev_h = x.clone()
         
-        out = self.propagate(edge_index, x=(x_l, x_r), delta_h=delta_h, 
-                           edge_features=edge_features)
+        num_edges = edge_index.size(1)
+        if num_edges > self.edge_batch_size:
+            out = self._batched_propagate(edge_index, x=(x_l, x_r), delta_h=delta_h, 
+                                        edge_features=edge_features)
+        else:
+            out = self.propagate(edge_index, x=(x_l, x_r), delta_h=delta_h, 
+                               edge_features=edge_features)
         
         out = out.view(-1, H * C)
         out = F.dropout(out, p=self.dropout, training=self.training)
         out = self.lin_out(out)
+        
+        return out
+    
+    def _batched_propagate(self, edge_index, x, delta_h, edge_features=None):
+        """Memory-efficient batched message passing for large graphs."""
+        num_edges = edge_index.size(1)
+        num_nodes = x[0].size(0)
+        H, C = self.num_heads, self.hidden_channels
+        
+        out = torch.zeros(num_nodes, H, C, device=edge_index.device, dtype=x[0].dtype)
+        
+        for start_idx in range(0, num_edges, self.edge_batch_size):
+            end_idx = min(start_idx + self.edge_batch_size, num_edges)
+            
+            batch_edge_index = edge_index[:, start_idx:end_idx]
+            batch_edge_features = edge_features[start_idx:end_idx] if edge_features is not None else None
+            
+            batch_out = self.propagate(batch_edge_index, x=x, delta_h=delta_h, 
+                                     edge_features=batch_edge_features)
+            
+            out += batch_out
         
         return out
     
@@ -208,7 +235,8 @@ def train_bef_gat(data, num_classes, config):
         dropout=config['dropout'],
         eps_b=config['eps_b'],
         K_freeze=config['K_freeze'],
-        r_basis=config['r_basis']
+        r_basis=config['r_basis'],
+        edge_batch_size=config.get('edge_batch_size', 4000000)
     ).to(device)
     
     data = data.to(device)

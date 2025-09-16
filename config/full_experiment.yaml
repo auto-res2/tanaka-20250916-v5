@@ -11,6 +11,7 @@ K_freeze: 6
 r_basis: 32
 early_stopping_patience: 20
 seeds: [13, 21, 42]
-output_dir: ".research/iteration3"
+output_dir: ".research/iteration4"
 meta_learning_steps: 5000
 energy_monitoring: true
+edge_batch_size: 4000000

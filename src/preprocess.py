@@ -46,19 +46,45 @@ def load_and_preprocess_data(dataset_name, root="data"):
     return data, dataset.num_classes
 
 
-def compute_node_features(data):
-    """Compute additional node features for MLSP."""
+def compute_node_features(data, batch_size=100000, max_edges_for_features=10000000):
+    """Compute additional node features for MLSP with memory-efficient processing."""
     row, col = data.edge_index
     deg = degree(col, data.num_nodes, dtype=torch.float)
     
-    edge_features = []
-    for i in range(data.edge_index.size(1)):
-        src, dst = data.edge_index[0, i], data.edge_index[1, i]
-        deg_i, deg_j = deg[src], deg[dst]
-        
-        x_i, x_j = data.x[src], data.x[dst]
-        cos_sim = F.cosine_similarity(x_i.unsqueeze(0), x_j.unsqueeze(0))
-        
-        edge_features.append([deg_i.item(), deg_j.item(), cos_sim.item()])
+    num_edges = data.edge_index.size(1)
     
-    return torch.tensor(edge_features, dtype=torch.float)
+    if num_edges > max_edges_for_features:
+        print(f"Large graph detected ({num_edges} edges). Using simplified edge features.")
+        deg_i = deg[row]
+        deg_j = deg[col]
+        degree_ratio = torch.minimum(deg_i, deg_j) / torch.maximum(deg_i, deg_j)
+        degree_ratio = torch.nan_to_num(degree_ratio, nan=0.0)
+        
+        edge_features = torch.stack([deg_i, deg_j, degree_ratio], dim=1)
+        return edge_features
+    
+    edge_features = torch.zeros((num_edges, 3), dtype=torch.float, device=data.x.device)
+    
+    for start_idx in range(0, num_edges, batch_size):
+        end_idx = min(start_idx + batch_size, num_edges)
+        
+        batch_src = data.edge_index[0, start_idx:end_idx]
+        batch_dst = data.edge_index[1, start_idx:end_idx]
+        
+        deg_i = deg[batch_src]
+        deg_j = deg[batch_dst]
+        
+        x_i = data.x[batch_src]
+        x_j = data.x[batch_dst]
+        
+        x_i_norm = F.normalize(x_i, p=2, dim=1)
+        x_j_norm = F.normalize(x_j, p=2, dim=1)
+        cos_sim = (x_i_norm * x_j_norm).sum(dim=1)
+        
+        edge_features[start_idx:end_idx, 0] = deg_i
+        edge_features[start_idx:end_idx, 1] = deg_j
+        edge_features[start_idx:end_idx, 2] = cos_sim
+        
+        torch.cuda.empty_cache()
+    
+    return edge_features
