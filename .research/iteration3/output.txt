@@ -1,0 +1,36 @@
+=== [PHASE 2/2] Full experiment start Tue Sep 16 05:14:14 AM UTC 2025 ===
+BEF-GAT Research Framework - Full Experiment
+Output directory: .research/iteration3
+Images directory: .research/iteration3/images
+
+Starting BEF-GAT experiment with config: Multiple datasets
+
+--- Processing dataset: Cora ---
+Dataset loaded: 2708 nodes, 13264 edges, 7 classes
+Epoch 000, Loss: 1.9474, Val Acc: 0.3000
+Epoch 010, Loss: 1.6265, Val Acc: 0.7540
+Epoch 020, Loss: 1.1372, Val Acc: 0.7640
+Epoch 030, Loss: 0.5995, Val Acc: 0.7700
+Epoch 040, Loss: 0.2906, Val Acc: 0.7620
+Epoch 050, Loss: 0.1390, Val Acc: 0.7700
+Epoch 060, Loss: 0.0781, Val Acc: 0.7740
+Epoch 070, Loss: 0.0611, Val Acc: 0.7720
+Epoch 080, Loss: 0.0431, Val Acc: 0.7720
+Epoch 090, Loss: 0.0296, Val Acc: 0.7660
+
+--- Processing dataset: PubMed ---
+Dataset loaded: 19717 nodes, 108365 edges, 3 classes
+Epoch 000, Loss: 1.0965, Val Acc: 0.5260
+Epoch 010, Loss: 0.8349, Val Acc: 0.7380
+Epoch 020, Loss: 0.4964, Val Acc: 0.7500
+Epoch 030, Loss: 0.2355, Val Acc: 0.7500
+Epoch 040, Loss: 0.1141, Val Acc: 0.7520
+Epoch 050, Loss: 0.0719, Val Acc: 0.7520
+Epoch 060, Loss: 0.0355, Val Acc: 0.7540
+Epoch 070, Loss: 0.0274, Val Acc: 0.7440
+Epoch 080, Loss: 0.0183, Val Acc: 0.7500
+Epoch 090, Loss: 0.0243, Val Acc: 0.7520
+
+--- Processing dataset: Reddit ---
+Dataset loaded: 232965 nodes, 114848857 edges, 41 classes
+Error during experiment execution: CUDA out of memory. Tried to allocate 876.23 GiB. GPU 0 has a total capacity of 79.15 GiB of which 69.79 GiB is free. Including non-PyTorch memory, this process has 9.35 GiB memory in use. Of the allocated memory 6.92 GiB is allocated by PyTorch, and 1.94 GiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
