@@ -1,0 +1,13 @@
+=== uv sync start Tue Sep 16 05:02:06 AM UTC 2025 ===
+=== uv install end Tue Sep 16 05:02:15 AM UTC 2025 ===
+=== [PHASE 1/2] Smoke test start Tue Sep 16 05:02:15 AM UTC 2025 ===
+BEF-GAT Research Framework - Smoke Test
+Output directory: .research/iteration2
+Images directory: .research/iteration2/images
+
+Starting BEF-GAT experiment with config: Cora
+
+--- Processing dataset: Cora ---
+Dataset loaded: 2708 nodes, 13264 edges, 7 classes
+Epoch 000, Loss: 1.9440, Val Acc: 0.1300
+Error during experiment execution: Expected all tensors to be on the same device, but got mat2 is on cuda:0, different from other tensors on cpu (when checking argument in method wrapper_CUDA_mm)
