@@ -1,0 +1,2 @@
+error: No `project` table found in: `/home/toma/t-80-8-b-01/_work/tanaka-20250916-v5/tanaka-20250916-v5/pyproject.toml`
+error: No `project` table found in: `/home/toma/t-80-8-b-01/_work/tanaka-20250916-v5/tanaka-20250916-v5/pyproject.toml`
