@@ -76,13 +76,14 @@ class MetaLearnedStabilityPrior(nn.Module):
         return self.mlp(edge_features).squeeze(-1)
 
 
-class SharedBasisHierarchicalSketch:
+class SharedBasisHierarchicalSketch(nn.Module):
     """Shared-Basis Hierarchical Sketch (SBHS) component."""
     
     def __init__(self, d_model, r_basis=32):
+        super().__init__()
         self.d_model = d_model
         self.r_basis = r_basis
-        self.gaussian_matrix = torch.randn(d_model, r_basis) / np.sqrt(r_basis)
+        self.register_buffer('gaussian_matrix', torch.randn(d_model, r_basis) / np.sqrt(r_basis))
         self.cached_coefficients = {}
     
     def cache_message(self, edge_key, message):
