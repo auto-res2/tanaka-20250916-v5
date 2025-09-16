@@ -1,0 +1,15 @@
+dataset: "Cora"
+epochs: 2
+batch_size: 512
+hidden_dim: 64
+num_heads: 4
+dropout: 0.6
+learning_rate: 0.002
+weight_decay: 0.0005
+eps_b: 0.005
+K_freeze: 3
+r_basis: 16
+early_stopping_patience: 5
+output_dir: ".research/iteration2"
+energy_monitoring: false
+seeds: [42]

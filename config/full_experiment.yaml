@@ -1,0 +1,16 @@
+datasets: ["Cora", "PubMed", "Reddit"]
+epochs: 100
+batch_size: 32768
+hidden_dim: 256
+num_heads: 8
+dropout: 0.6
+learning_rate: 0.002
+weight_decay: 0.0005
+eps_b: 0.005
+K_freeze: 6
+r_basis: 32
+early_stopping_patience: 20
+seeds: [13, 21, 42]
+output_dir: ".research/iteration2"
+meta_learning_steps: 5000
+energy_monitoring: true
